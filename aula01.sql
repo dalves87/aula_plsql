@@ -16,9 +16,10 @@ CREATE OR REPLACE PACKAGE BODY PKG_CALCULADORA IS
     END CALCULA_REAJUSTE;
     
     FUNCTION CONVERTE_DOLAR(V_DOLAR IN NUMBER) RETURN NUMBER IS
-    
+       v_cotacao NUMBER(10, 2) := 5.04;
+       v_real    v_cotacao%type := v_cotacao * v_dolar;
     BEGIN
-       NULL;
+       RETURN 'Conversão US$ ' || v_dolar || ' em R$: ' || v_real;
     END CONVERTE_DOLAR;
 
 END PKG_CALCULADORA;
